@@ -22,3 +22,9 @@ Simple Blog webapp with SpringJPA, bootstrap, jQuery, Markdown
     - 옵션을 조정하면 테이블은 자동으로 생성됨.
     - 기본은 MariaDB로 설정했고, H2 DB는 주석만 풀면 사용할 수 있음.
 3. WAS에 배포하고 접속한다. 끝.
+
+### DEMO
+데모 사이트를 확인할 수 있습니다.
+
+<http://gilhyeon.xyz:8080/SimpleBlog/>
+

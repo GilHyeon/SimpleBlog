@@ -46,7 +46,8 @@
                 <li><a href="<c:url value='/'/>">Home<span class="sr-only">(current)</span></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Gilhyeon's homepage</a></li>
+                <li><a href="https://github.com/GilHyeon/SimpleBlog">Project on GitHub</a></li>
+                <li><a href="#">build by Gilhyeon</a></li>
             </ul>
         </div>
 
@@ -73,7 +74,6 @@
             <div id="wmd-preview" class="wmd-panel wmd-preview"></div>
 
             <button type="submit" class="btn btn-primary">Save</button>
-            <button type="button" class="btn btn-danger" onclick="on_delete();">Delete</button>
 
         </form>
     </div>
