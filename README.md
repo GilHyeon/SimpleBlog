@@ -3,7 +3,7 @@ Simple Blog webapp with SpringJPA, bootstrap, jQuery, Markdown
 
 가장 간단하게 만든 블로그 소스
 
-###1. Refference and Used Skills.
+### Refference and Used Skills.
 
 블로그를 만들 때 사용 한 것은 아래 와 같다.
 
@@ -16,7 +16,7 @@ Simple Blog webapp with SpringJPA, bootstrap, jQuery, Markdown
     * pagedown - Markdown Editor
     * jQuery
 
-###2. 사용방법
+### 사용방법
 1. 프로젝트를 다운로드한다.
 2. appconfig.xml 파일에서 DB 정보를 수정 후 사용하면 됩니다.
     - 옵션을 조정하면 테이블은 자동으로 생성됨.
