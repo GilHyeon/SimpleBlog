@@ -15,13 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Simple Blog</title>
     <%@include file="/WEB-INF/jsp/common/pageHeader.jsp" %>
-    <link rel="stylesheet/less" href="<c:url value='/js/pagedown/demo.less'/>">
-    <script src="<c:url value='/js/pagedown/less/less-1.2.2.min.js'/>"></script>
-    <script type="text/javascript" src="<c:url value='/js/pagedown/Markdown.Converter.js'/>"></script>
-    <script type="text/javascript" src="<c:url value='/js/pagedown/Markdown.Sanitizer.js'/>"></script>
-    <script type="text/javascript" src="<c:url value='/js/pagedown/Markdown.Editor.js'/>"></script>
+    <script src="<c:url value='/js/marked/marked.js'/>"></script>
     <script language="JavaScript">
-        var converter1 = Markdown.getSanitizingConverter();
         $(document).ready(function () {
             loadBlog();
         });
@@ -39,7 +34,7 @@
                                 +"<div class='blog-post'>\n"
                                 +"<h2 class='blog-post-title'>"+result[i].title+"</h2>\n"
                                 +"<p class='blog-post-meta'>"+getBlogDate(new Date(result[i].createdDate)) +" by <a href='#'>Simple Blog</a></p>\n"
-                                + converter1.makeHtml(result[i].content)
+                                + marked(result[i].content)
                                 + "<hr>"
                             );
                         }

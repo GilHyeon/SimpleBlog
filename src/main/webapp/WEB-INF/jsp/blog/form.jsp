@@ -15,17 +15,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gilhyeon's Blog</title>
     <%@include file="/WEB-INF/jsp/common/pageHeader.jsp" %>
-    <link rel="stylesheet/less" href="<c:url value='/js/pagedown/demo.less'/>">
-    <script src="<c:url value='/js/pagedown/less/less-1.2.2.min.js'/>"></script>
-    <script type="text/javascript" src="<c:url value='/js/pagedown/Markdown.Converter.js'/>"></script>
-    <script type="text/javascript" src="<c:url value='/js/pagedown/Markdown.Sanitizer.js'/>"></script>
-    <script type="text/javascript" src="<c:url value='/js/pagedown/Markdown.Editor.js'/>"></script>
+    <link rel="stylesheet" href="<c:url value='/js/simplemde/simplemde.min.css'/>">
+    <script src="<c:url value='/js/simplemde/simplemde.min.js'/>"></script>
     <script language="JavaScript">
         var id = "${param.id}";
         $(document).ready(function () {
-            var converter1 = Markdown.getSanitizingConverter();
-            var editor1 = new Markdown.Editor(converter1);
-            editor1.run();
+            var simplemde = new SimpleMDE({ element: $("#MyID")[0] });
         });
 
     </script>
@@ -67,14 +62,8 @@
                 <span class="input-group-addon">제목</span>
                 <input type="text" class="form-control" placeholder="제목을 입력하세요" aria-describedby="basic-addon1" name="title"/>
             </div>
-            <div class="wmd-panel">
-                <div id="wmd-button-bar"></div>
-                <textarea class="wmd-input" id="wmd-input" name="content"></textarea>
-            </div>
-            <div id="wmd-preview" class="wmd-panel wmd-preview"></div>
-
+            <textarea  class="form-control" name="content"></textarea>
             <button type="submit" class="btn btn-primary">Save</button>
-
         </form>
     </div>
 </div>

@@ -12,8 +12,8 @@ Simple Blog webapp with SpringJPA, bootstrap, jQuery, Markdown
     
 2. Client-side
     * bootstrap
-    * Markdown
-    * pagedown - Markdown Editor
+    * marked - Markdown Converter
+    * simplemde - Markdown Editor
     * jQuery
 
 ### 사용방법
@@ -23,8 +23,4 @@ Simple Blog webapp with SpringJPA, bootstrap, jQuery, Markdown
     - 기본은 MariaDB로 설정했고, H2 DB는 주석만 풀면 사용할 수 있음.
 3. WAS에 배포하고 접속한다. 끝.
 
-### DEMO
-데모 사이트를 확인할 수 있습니다.
-
-<http://gilhyeon.xyz:8080/SimpleBlog/>
 

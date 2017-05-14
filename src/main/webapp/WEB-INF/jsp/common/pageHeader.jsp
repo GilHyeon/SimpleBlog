@@ -7,7 +7,6 @@
 --%>
 <script type="text/javascript" src="<c:url value='/js/jquery-1.11.0.min.js'/>"></script>
 <script type="text/javascript" src="<c:url value='/js/i18n/grid.locale-kr.js'/>"></script>
-<script type="text/javascript" src="<c:url value='/js/jquery.jqGrid.min.js'/>"></script>
 <script src="<c:url value='/js/jquery-ui-1.12.1.custom/jquery-ui.min.js'/>"></script>
 <script src="<c:url value='/js/bootstrap.min.js'/>"></script>
 <link rel="stylesheet" href="<c:url value='/css/common.css'/>">
