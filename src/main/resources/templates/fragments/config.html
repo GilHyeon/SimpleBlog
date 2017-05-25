@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head th:fragment="configFragment">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Simple Blog</title>
+    <!-- 공통으로 쓰이는 css파일을넣는다.-->
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7/dist/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/webjars/simplemde/1.11.2/dist/simplemde.min.css}"/>
+    <link rel="stylesheet" th:href="@{/common.css}"/>
+    <!-- 사용자 CSS 영역이 들어감 -->
+    <!--<th:block layout:fragment="css"></th:block>-->
+
+    <!-- 공통으로 쓰이는 css파일을넣는다.-->
+    <script th:src="@{/webjars/jquery/3.2.1/dist/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.7/dist/js/bootstrap.min.js}"></script>
+    <script th:src="@{/webjars/simplemde/1.11.2/dist/simplemde.min.js}"></script>
+    <script th:src="@{/webjars/marked/0.3.6/lib/marked.js}"></script>
+    <!-- 사용자 스크립트 영역이 들어감 -->
+    <script th:inline="JavaScript">
+        /*<![CDATA[*/
+        function getFormattedDate(date) {
+            var year = date.getFullYear();
+            var month = (1 + date.getMonth()).toString();
+            month = month.length > 1 ? month : '0' + month;
+            var day = date.getDate().toString();
+            day = day.length > 1 ? day : '0' + day;
+            return year + '-' + month + '-' + day;
+        }
+        function getBlogDate(date) {
+            var year = date.getFullYear();
+            var monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+            var month = (1 + date.getMonth()).toString();
+            month = month.length > 1 ? month : '0' + month;
+            var day = date.getDate().toString();
+            day = day.length > 1 ? day : '0' + day;
+            return monthNames[date.getMonth()] + ' ' + day + ', ' + year;
+        }
+        /*]]>*/
+    </script>
+</head>
+</html>
