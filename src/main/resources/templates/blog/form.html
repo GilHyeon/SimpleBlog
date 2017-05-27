@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="fragments/config :: configFragment"></head>
+<body>
+<script th:inline="JavaScript">
+    /*<![CDATA[*/
+    $(document).ready(function () {
+        $(document).ready(function () {
+            var simplemde = new SimpleMDE({element: $("#content")[0]});
+        });
+    });
+
+
+    /*]]>*/
+</script>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#defaultNavbar1">
+                <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                    class="icon-bar"></span><span class="icon-bar"></span></button>
+            <a class="navbar-brand" href="#">SimpleBlog</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="defaultNavbar1">
+            <ul class="nav navbar-nav">
+                <li><a th:href="@{/}">Home<span class="sr-only">(current)</span></a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://github.com/GilHyeon/SimpleBlog">Project on GitHub</a></li>
+                <li><a href="#">build by Gilhyeon</a></li>
+            </ul>
+        </div>
+
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+<div class="container">
+    <div class="container-fluid">
+        <h1>블로그 등록</h1>
+    </div>
+    <hr/>
+    <div class="container-fluid">
+        <form name="default-form" id="default-form" action="/blog/form" method="post">
+            <input type="hidden" name="id"/>
+            <div class="input-group">
+                <span class="input-group-addon">제목</span>
+                <input type="text" class="form-control" placeholder="제목을 입력하세요" aria-describedby="basic-addon1"
+                       name="title"/>
+            </div>
+            <textarea id="content" class="form-control" name="content"></textarea>
+            <button type="submit" class="btn btn-primary">Save</button>
+            <input  type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+        </form>
+    </div>
+</div><!-- /.container -->
+
+<footer class="blog-footer">
+    <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a
+            href="https://twitter.com/mdo">@mdo</a>.</p>
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+</footer>
+
+</body>
+</html>
