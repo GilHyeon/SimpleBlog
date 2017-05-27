@@ -1,0 +1,1 @@
+insert into USER (username, password, fullname) VALUES ('gilhyeon', 'gilhyeon', 'Gilhyeon Hong');
