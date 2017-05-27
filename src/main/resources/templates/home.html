@@ -1,37 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< HEAD:src/main/webapp/WEB-INF/jsp/home.jsp
-<html lang="ko">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Simple Blog</title>
-    <%@include file="/WEB-INF/jsp/common/pageHeader.jsp" %>
-    <script src="<c:url value='/js/marked/marked.js'/>"></script>
-    <script language="JavaScript">
-        $(document).ready(function () {
-            loadBlog();
-        });
-
-        function loadBlog() {
-            $.ajax({
-                type: "GET",
-                url: "<c:url value='/blog/findAll'/>",
-                //data:params,
-                success: function (result) {
-                    console.log(result);
-                    if(result.length >0) {
-                        for (var i = 0; i < result.length; i++) {
-                            $("#BlogArea").append(""
-                                +"<div class='blog-post'>\n"
-                                +"<h2 class='blog-post-title'>"+result[i].title+"</h2>\n"
-                                +"<p class='blog-post-meta'>"+getBlogDate(new Date(result[i].createdDate)) +" by <a href='#'>Simple Blog</a></p>\n"
-                                + marked(result[i].content)
-                                + "<hr>"
-                            );
-                        }
-                    }else {
-=======
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head th:replace="fragments/config :: configFragment"></head>
@@ -50,7 +17,6 @@
                 console.log(result);
                 if (result.length > 0) {
                     for (var i = 0; i < result.length; i++) {
->>>>>>> origin/development:src/main/resources/templates/home.html
                         $("#BlogArea").append(""
                             + "<div class='blog-post'>\n"
                             + "<h2 class='blog-post-title'>" + result[i].title + "</h2>\n"
