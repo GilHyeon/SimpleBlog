@@ -5,6 +5,7 @@ import com.gilhyeon.simpleblog.service.BlogService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +30,7 @@ public class BlogController {
      * Pages
      */
     @RequestMapping(value = "/form", method = RequestMethod.GET)
+    @Secured(value = "ROLE_USER")
     public String form() {
         return "blog/form";
     }
@@ -62,6 +64,7 @@ public class BlogController {
 
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
+    @Secured(value = "ROLE_USER")
     public String delete(@PathVariable Long id) {
         logger.debug("deleteById by id...");
 
@@ -70,6 +73,7 @@ public class BlogController {
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    @Secured(value = "ROLE_USER")
     public String delete(Blog blog) {
         logger.debug("deleteById by id...");
 
